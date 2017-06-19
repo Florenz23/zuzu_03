@@ -1,0 +1,5 @@
+export { default as ContactDetailImageBox } from './ContactDetailImageBox'
+export { default as ContactDetailShareBox } from './ContactDetailShareBox'
+export { default as ContactDetailSocialBox } from './ContactDetailSocialBox'
+export { default as ContactDetailTagBox } from './ContactDetailTagBox'
+export { default as ContactDetailPersonalDataBox } from './ContactDetailPersonalDataBox'
