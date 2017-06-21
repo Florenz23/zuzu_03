@@ -1,7 +1,6 @@
 import {Platform} from 'react-native';
 import {TabNavigator, StackNavigator} from 'react-navigation';
 
-import CounterViewContainer from '../counter/CounterViewContainer';
 import ThreadNavContainer from '../chat/chatMain/ThreadNavContainer';
 import ThreadViewContainer from '../chat/chatMain/ThreadViewContainer';
 import ThreadDetailViewContainer from '../chat/chatDetail/ThreadDetailViewContainer';
@@ -17,8 +16,8 @@ import React, {Component } from 'react'
 import { Image, Button, StyleSheet } from 'react-native'
 
 // const headerColor = 'rgb(20,152,255)';
-const headerColor = '#39babd';
-const activeColor = 'white';
+const headerColor = '#f5fffa';
+const activeColor = 'blue';
 // TabNavigator is nested inside StackNavigator
 // here roots are defined
 
@@ -36,14 +35,23 @@ const MainNavigator = TabNavigator({
   Settings: {
     screen: SettingsNavContainer,
   },
-}, {
-  activeTintColor: '#e91e63',
-  labelStyle: {
-    fontSize: 12,
-  },
-  style: {
-    backgroundColor: '39babd',
-  },
+},
+ {
+    tabBarOptions: {
+      ...Platform.select({
+    android: {
+      activeTintColor: activeColor,
+      inactiveTintColor: 'grey',
+      labelStyle: {
+        fontSize: 12,
+      },
+      style: {
+        backgroundColor: headerColor,
+      },
+    }
+    })
+
+    }
 });
 
 // const AppNavigator = StackNavigator({

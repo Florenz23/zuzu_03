@@ -14,12 +14,12 @@ class ContactNavContainer extends Component {
     tabBarLabel: 'Contacts',
     // Note: By default the icon is only shown on iOS. Search the showIcon option below.
     tabBarIcon: ({ tintColor }) => (
-      <Icon name='contact' size={24} color='grey'/>
+      <Icon name='contacts' size={24} color='grey'/>
     ),
   };
   render() {
     return (
-      <ConnectViewContainer />
+      <ContactViewContainer />
     );
   }
 }

@@ -19,7 +19,7 @@ class SettingsNavContainer extends Component {
   };
   render() {
     return (
-      <ConnectViewContainer />
+      <SettingsViewContainer />
     );
   }
 }
