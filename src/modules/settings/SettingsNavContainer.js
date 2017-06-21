@@ -10,27 +10,16 @@ import Icon from 'react-native-vector-icons/MaterialIcons';
 import SettingsViewContainer from "./SettingsViewContainer"
 
 class SettingsNavContainer extends Component {
-  static displayName = 'ColorView';
-
   static navigationOptions = {
-    title: 'Settings',
-    tabBar: () => ({
-      icon: (props) => (
-        <Icon name='settings' size={24} color={props.tintColor} />
-      )
-    }),
-    // TODO: move this into global config?
-    header: {
-      tintColor: 'white',
-      style: {
-        backgroundColor: '#39babd'
-      }
-    }
-  }
-
+    tabBarLabel: 'Settings',
+    // Note: By default the icon is only shown on iOS. Search the showIcon option below.
+    tabBarIcon: ({ tintColor }) => (
+      <Icon name='settings' size={24} color='grey'/>
+    ),
+  };
   render() {
     return (
-      <SettingsViewContainer />
+      <ConnectViewContainer />
     );
   }
 }

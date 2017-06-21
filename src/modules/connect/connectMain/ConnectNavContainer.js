@@ -9,25 +9,14 @@ import Icon from 'react-native-vector-icons/MaterialIcons';
 
 import ConnectViewContainer from "./ConnectViewContainer"
 
-class ConnectNavContainer extends Component {
-  static displayName = 'ColorView';
-
+class ConnectNavContainer extends React.Component {
   static navigationOptions = {
-    title: 'Connect',
-    tabBar: () => ({
-      icon: (props) => (
-        <Icon name='search' size={24} color={props.tintColor} />
-      )
-    }),
-    // TODO: move this into global config?
-    header: {
-      tintColor: 'white',
-      style: {
-        backgroundColor: '#39babd'
-      }
-    }
-  }
-
+    tabBarLabel: 'Connect',
+    // Note: By default the icon is only shown on iOS. Search the showIcon option below.
+    tabBarIcon: ({ tintColor }) => (
+      <Icon name='search' size={24} color='grey'/>
+    ),
+  };
   render() {
     return (
       <ConnectViewContainer />

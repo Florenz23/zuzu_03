@@ -10,27 +10,16 @@ import Icon from 'react-native-vector-icons/MaterialIcons';
 import ContactViewContainer from "./ContactViewContainer"
 
 class ContactNavContainer extends Component {
-  static displayName = 'ColorView';
-
   static navigationOptions = {
-    title: 'Contacts',
-    tabBar: () => ({
-      icon: (props) => (
-        <Icon name='contacts' size={24} color={props.tintColor} />
-      )
-    }),
-    // TODO: move this into global config?
-    header: {
-      tintColor: 'white',
-      style: {
-        backgroundColor: '#39babd'
-      }
-    }
-  }
-
+    tabBarLabel: 'Contacts',
+    // Note: By default the icon is only shown on iOS. Search the showIcon option below.
+    tabBarIcon: ({ tintColor }) => (
+      <Icon name='contact' size={24} color='grey'/>
+    ),
+  };
   render() {
     return (
-      <ContactViewContainer />
+      <ConnectViewContainer />
     );
   }
 }

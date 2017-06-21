@@ -13,20 +13,12 @@ class ThreadNavContainer extends Component {
   static displayName = 'ColorView';
 
   static navigationOptions = {
-    title: 'Chat',
-    tabBar: () => ({
-      icon: (props) => (
-        <Icon name='chat' size={24} color={props.tintColor} />
-      )
-    }),
-    // TODO: move this into global config?
-    header: {
-      tintColor: 'white',
-      style: {
-        backgroundColor: '#39babd'
-      }
-    }
-  }
+    tabBarLabel: 'Chatt',
+    // Note: By default the icon is only shown on iOS. Search the showIcon option below.
+    tabBarIcon: ({ props }) => (
+      <Icon name='chat' size={24}  color='grey'/>
+    ),
+  };
 
   render() {
     return (
