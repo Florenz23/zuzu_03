@@ -5,10 +5,12 @@ import {loop, Effects} from 'redux-loop-symbol-ponyfill';
 // Initial state
 const initialState = Map({
   recentContactId : 1,
+  searchQuery : "BWL"
 });
 
 // Actions
 const SETRECENTCONTACTID = 'ConnectState/SETRECENTCONTACTID'
+const SETSEARCHQUERY = 'ConnectState/SETSEARCHQUERY'
 // Action creators
 export function setRecentContactId(contactId) {
   return {
@@ -18,12 +20,22 @@ export function setRecentContactId(contactId) {
     }
   };
 }
+export function setSearchQuery(query) {
+  return {
+    type: SETSEARCHQUERY,
+    payload : {
+      searchQuery : query
+    }
+  };
+}
 
 // Reducer
 export default function ConnectStateReducer(state = initialState, action = {}) {
   switch (action.type) {
     case SETRECENTCONTACTID:
       return state.update('recentContactId', value => action.payload.contactId);
+    case SETSEARCHQUERY:
+      return state.update('searchQuery', value => action.payload.searchQuery);
     default:
       return state;
   }

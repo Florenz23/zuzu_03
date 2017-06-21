@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Container, Header, Title, Content, Button, Icon, List, ListItem, Text, Thumbnail, Left, Right, Body } from 'native-base';
+import { Container, Item, Input, Header, Title, Content, Button, Icon, List, ListItem, Text, Thumbnail, Left, Right, Body } from 'native-base';
 import { LiestView } from 'realm/react-native'
 
 
@@ -16,18 +16,34 @@ const showContactDetail = (navigate,setRecentContactId,contactId) => {
   setRecentContactId(contactId)
 }
 
+const getSearchResult = (text,setSearchQuery) => {
+  console.log("moin")
+  console.log(text)
+  //setSearchQuery(text)
+}
 
 //TODO user ListView from realm
 
 const ConnectView = (props) => {
-  const { navigate, setRecentContactId, contactId } = props
-
+  const { navigate, setRecentContactId, contactId, searchQuery, setSearchQuery } = props
+  console.log(setSearchQuery)
   let datas = realm.objects('User')
   const uri = "./donny-copy.png"
 
     return (
       <Container style={styles.container}>
+      <Header searchBar rounded>
+                    <Item>
+                        <Icon name="ios-search" />
+                        <Input placeholder="Search" onChangeText={(text)=> setSearchQuery(text)}/>
+                        <Icon name="ios-people" />
+                    </Item>
+                    <Button transparent>
+                        <Text onClick={() => setSearchQuery("moin")}>Search </Text>
+                    </Button>
+                </Header>
         <Content style={{marginTop:10}}>
+        <Text> {searchQuery} </Text>
           <List
             dataArray={datas} renderRow={data =>
               <ListItem avatar onPress={() => showContactDetail(navigate,setRecentContactId,data.userId)}>
