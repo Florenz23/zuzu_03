@@ -55,7 +55,7 @@ const MainNavigator = TabNavigator({
 });
 
 // const AppNavigator = StackNavigator({
-//   Home: {screen: MyHomeScreen},
+//   Home: {screen: MainNavigator},
 //   InfiniteColorStack: {screen: ConnectNavContainer},
 //   ThreadDetailViewContainer: {screen: ThreadDetailViewContainer},
 //   ConnectDetail : {screen: ConnectDetailViewContainer},
@@ -63,3 +63,5 @@ const MainNavigator = TabNavigator({
 
 
 export default MainNavigator;
+
+// export default AppNavigator
